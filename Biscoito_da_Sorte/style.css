@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: linear-gradient(45deg, #190361 0%, #BB00FF 100%);
+  --bg-content: white;
+  --bg-backButton: #FF9500;
+  --bg-backButton-hover: #8a5102dc;
+
+  --tt-title: #34355B;
+  --tt-subtitle: #34355B;
+  --tt-phrase: #000000;
+  --tt-button: white;
+
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--bg-primary);
+  height: 100vh;
+
+  display: grid;
+  place-items: center;
+}
+
+main {
+  text-align: center;
+  margin-top: -12rem;
+  border-radius: .5rem;
+
+  box-shadow:  .5rem .5rem .4rem .9rem rgba(0, 0, 0, 0.3);
+  background-color: white;
+  width: min(42.8rem, 90%);
+}
+
+.content {
+  padding: 4.8rem 6.4rem;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--tt-title);
+  font-size: 2.4rem;
+  
+  margin-bottom: 1.3rem;
+}
+
+.phrase {
+  font-family: "DM Sans", sans-serif;
+  color: var(--tt-subtitle);
+  font-size: 1.5rem;
+}
+
+.phrase-opened {
+  background-color: #E4EDF1;
+  font-family: "Dancing Script", cursive;
+  font-size: 2.4rem;
+  box-shadow: .2rem .2rem  rgba(0, 0, 0, 0.3);
+  color: #000000;
+  animation: phraseAnimation 2s ;
+}
+
+@keyframes phraseAnimation {
+  0% { transform: translateY(150px) scale(0.1, 0.1);}  
+
+  100% { transform: translateY(0px) scale(1, 1); }
+}
+
+.imageOne {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.imageOne:hover {
+  animation: imageOneShake 0.3s infinite;
+}
+
+@keyframes imageOneShake {
+  0% { transform: translateX(0) translateY(5px)}
+  25% { transform: translateX(5px) translateY(0)}
+  50% { transform: translateX(-5px) translateY(5px)}
+  75% { transform: translateX(5px) translateY(0)}
+  100% { transform: translateX(0), translateY(5px)}
+}
+
+.imageTwo {
+  background: none;
+  border: none;
+  margin-top: 2rem;
+}
+
+
+.back {
+  background: var(--bg-backButton);
+  font-family: "DM Sans", sans-serif;
+  border: none;
+  border-radius: .4rem;
+  color: var(--tt-button);
+
+  width: 17.4rem;
+  height: 5.2rem;
+
+  font-size: 1.5rem;
+  margin-top: 1.7rem;
+
+  cursor: pointer;
+  transition: .3s;
+}
+
+.back:hover {
+  background-color: var(--bg-backButton-hover);
+}
+
+.hide {
+  display: none;
+}
